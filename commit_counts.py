@@ -12,7 +12,7 @@ parser = argparse.ArgumentParser(description="Used to determine the number of co
 )
 parser.add_argument("--since",
     help="Search for commits more recent than a specific date.",
-    default="6/6/2001",
+    default="1/1/1970",
 )
 parser.add_argument("--until",
     help="Search for commits older than a specific date.",
