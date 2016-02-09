@@ -31,7 +31,7 @@ def get_commit_count(args):
     for each_email_address in args.email_list:
         command = ['git', 'log', '--oneline','--author=%s' % each_email_address, '--since=%s' % args.since, '--until=%s' % args.until]
         log_entries_list = check_output(command)
-        log_entry_count = len(log_entries_list.split('\n'))-1 # We do subtract 1 magic here to get the list back to base 0.
+        log_entry_count = len(log_entries_list.split('\n'))-1 # We do subtract 1 magic here to deal with the empty line feed.
         count_dict[each_email_address] = log_entry_count
 
     return count_dict
